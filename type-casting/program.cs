@@ -18,7 +18,6 @@ namespace HelloWorld
 
             // Convert.ToString() = conversion d'un int en un String.
             int e = 321;
-
             String f = Convert.ToString(e);
 
             String g = "%";
@@ -26,6 +25,7 @@ namespace HelloWorld
             char h = Convert.ToChar(g);
 
             String i = "true";
+            // Convert.ToBoolean() = conversion d'un String en un booléen.
             bool j = Convert.ToBoolean(i);
 
             // pour afficher le type de la variable
@@ -34,6 +34,7 @@ namespace HelloWorld
             Console.WriteLine(f.GetType());
             Console.WriteLine(h.GetType());
             Console.WriteLine(j.GetType());
+
             Console.ReadKey();
         }
     }
