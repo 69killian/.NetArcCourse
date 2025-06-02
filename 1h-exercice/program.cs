@@ -6,26 +6,33 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
+            // Introduction
             Console.WriteLine("Bienvenue dans le jeu du nombre magique !");
             Console.WriteLine("Quel est ton prénom ?");
             string name = Console.ReadLine();
 
+            // Génération du nombre magique
             Random random = new Random();
             int nombreMagique = random.Next(1, 100);
+            // Nombre d'essais maximum
             const int MAX_ATTEMPTS = 5;
 
             Console.WriteLine("Enchanté " + name + " ! Le nombre magique est compris entre 1 et 100, et tu as " + MAX_ATTEMPTS + " essais.");
 
+            // Variables
             int essaie;
             int tentative = 0;
+            // Variable pour savoir si le joueur a gagné
             bool gagne = false;
 
+            // Boucle principale du jeu
             while (tentative < MAX_ATTEMPTS)
             {
                 Console.WriteLine("Entre ton nombre :");
                 essaie = Convert.ToInt32(Console.ReadLine());
                 tentative++;
 
+                // Vérification si le joueur a gagné
                 if (essaie == nombreMagique)
                 {
                     Console.WriteLine("Bravo, tu as trouvé le nombre magique en " + tentative + " tentative(s) !");
