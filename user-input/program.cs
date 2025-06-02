@@ -19,6 +19,7 @@ namespace HelloWorld
             Console.WriteLine("Quel est ton Sexe ? (male/female)");
             String sexe = Console.ReadLine();
 
+            
             if (sexe == "male") {
                 Console.WriteLine("Tu es un homme");
             } else if (sexe == "female") {

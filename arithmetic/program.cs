@@ -24,7 +24,7 @@ namespace HelloWorld
             
             
 
-            Console.WriteLine(friends);
+            Console.WriteLine(friends.GetType());
            
             Console.ReadKey();
         }
