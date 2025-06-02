@@ -75,3 +75,7 @@ namespace HelloWorld
         }
     }
 }
+
+// dotnet new console pour créer un nouveau projet console
+// dotnet run pour exécuter le programme
+// dotnet build pour compiler le programme
