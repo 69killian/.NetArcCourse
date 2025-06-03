@@ -7,7 +7,6 @@ namespace HelloWorld
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the password generator");
-
             int maxGenerations = 3;
             int generationCount = 0;
 
@@ -24,13 +23,16 @@ namespace HelloWorld
                 }
 
                 Console.WriteLine("Do you want letters in your password? (yes/no)");
-                bool includeLetters = Console.ReadLine().ToLower() == "yes" || Console.ReadLine().ToLower() == "y";
+                string lettersInput = Console.ReadLine().ToLower();
+                bool includeLetters = lettersInput == "yes" || lettersInput == "y";
 
                 Console.WriteLine("Do you want numbers in your password? (yes/no)");
-                bool includeNumbers = Console.ReadLine().ToLower() == "yes" || Console.ReadLine().ToLower() == "y";
+                string numbersInput = Console.ReadLine().ToLower();
+                bool includeNumbers = numbersInput == "yes" || numbersInput == "y";
 
                 Console.WriteLine("Do you want special characters in your password? (yes/no)");
-                bool includeSpecialCharacters = Console.ReadLine().ToLower() == "yes" || Console.ReadLine().ToLower() == "y";
+                string specialCharactersInput = Console.ReadLine().ToLower();
+                bool includeSpecialCharacters = specialCharactersInput == "yes" || specialCharactersInput == "y";
 
                 string password = "";
                 string letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
