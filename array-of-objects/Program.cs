@@ -6,50 +6,42 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-           // abstract classes = une classe abstraite est une classe qui ne peut pas être instanciée
-           // elle permet d'indiquer les composants manquants ou son implémentation incomplète
+            Car[] garage = new Car[3];
 
-           Car car = new Car();
-           Bicycle bicycle = new Bicycle();
-           Boat boat = new Boat();
-           Vehicle vehicle = new Vehicle();
+            Car car = new Car("Toyota");
+            Car car2 = new Car("BMW");
+            Car car3 = new Car("Mercedes");
 
-           Console.WriteLine(car.maxSpeed);
-           Console.WriteLine(bicycle.maxSpeed);
-           Console.WriteLine(boat.maxSpeed);
+            garage[0] = car;
+            garage[1] = car2;
+            garage[2] = car3;
+
+            // autre façon de créer un tableau de voitures avec moins de lignes de code
+            Car[] garage = {new Car("Toyota"), new Car("BMW"), new Car("Mercedes")};
+
+            Console.WriteLine(garage[0].model);
+            Console.WriteLine(garage[1].model);
+            Console.WriteLine(garage[2].model);
+
+            // afficher toutes les voitures dans le garage
+            foreach(Car car in garage)
+            {
+                Console.WriteLine(car.model);
+            }
 
             Console.ReadKey();
         }
     }
-    abstract class Vehicle
-    {
-        public int speed = 0;
-
-        // cette méthode est héritée par les classes filles
-        // on peut l'utiliser avec les objets de ces classes
-        public void Go()
-        {
-            Console.WriteLine("This vehicle is moving!");
-        }
-    }
 
     // Car hérite de la classe Vehicle
-    class Car : Vehicle
+    class Car 
     {
-        public int wheels = 4;
-        public int maxSpeed = 500;
-    }
-
-    class Bicycle : Vehicle
-    {
-        public int wheels = 2;
-        public int maxSpeed = 20;
-    }
-
-    class Boat : Vehicle
-    {
-        public int wheels = 0;
-        public int maxSpeed = 100;
+        public String model;
+        
+        public Car(String model)
+        {
+            this.model = model;
+        }
     }
 }
 // dotnet new console pour créer un nouveau projet console
