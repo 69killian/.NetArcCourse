@@ -6,9 +6,8 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-            Car car = new Car(200);
-            car.Speed = 100;
-            Console.WriteLine(car.Speed);
+            Car car = new Car("Tesla");
+            Console.WriteLine(car.Model);
 
             Console.ReadKey();
         }
@@ -16,29 +15,14 @@ namespace HelloWorld
 
     class Car
     {
-        private int speed;
+        // getters et setters automatiques
+        // Plus besoin de créer des méthodes getters et setters
+        // Plus besoin de créer des variables privées
+        public String Model { get; set; }
 
-        public Car(int speed)
+        public Car(String model)
         {
-            this.speed = speed;
-        }
-
-        public int Speed
-        {
-            // get = récupère la valeur de la variable
-            get { return speed; }
-            // set = définit la valeur de la variable
-            set 
-            {
-                if (speed > 500) 
-                {
-                    speed = 500;
-                } 
-            else 
-            { 
-                speed = value; 
-            }
-            }
+            this.Model = model;
         }
     }
 }
