@@ -6,66 +6,50 @@ namespace HelloWorld
     {
         static void Main(string[] args)
         {
-           // une interface est un contrat entre une classe et une autre classe
-           // une classe implémentant une interface doit implémenter tous les membres de l'interface
-           // une interface peut contenir des méthodes, des propriétés, des événements, etc.
-           // une interface ne peut pas contenir de constructeur
-           // une interface ne peut pas contenir de champ
-           // une interface ne peut pas contenir de méthode implémentée
-           Rabit rabit = new Rabit();
-           rabbit.Flee();
+            // List = collection d'objets qui représente une liste d'éléments accessible par index
+            // similaire à un tableau mais plus flexible
+            // utilise System.Collections.Generic
 
-           Hawk hawk = new Hawk();
-           hawk.Hunt();
+            List<String> food = new List<String>();
 
-           Fish fish = new Fish();
-           fish.Flee();
-           fish.Hunt();
+            // ajoute un élément à la liste
+            food.Add("Pizza");
+            food.Add("Hamburger");
+            food.Add("Hotdog");
+            food.Add("Fries");
 
+            foreach (String item in food)
+            {
+                Console.WriteLine(item);
+            }
+            // supprime un élément de la liste
+            food.Remove("Fries");
+            // insère un élément à l'index 0 toujours à préciser en paramètre
+            food.Insert(0, "Sushi");
+            // Détermine le nombre d'élément de la liste
+            Console.WriteLine(food.Count);
+
+            // Détermine l'index d'un élément
+            Console.WriteLine(food.IndexOf("Pizza"));
+
+            // Détermine si un élément existe dans la liste
+            Console.WriteLine(food.LastIndexOf("Sushi"));
+
+            // Détermine si un élément existe dans la liste
+            Console.WriteLine(food.Contains("Pizza"));
+
+            // trie la liste
+            food.Sort();
+            // inverse la liste
+            food.Reverse();
+            // vide la liste
+            food.Clear();
+            // Détermine si la liste est vide et retourne un booléen
+            Console.WriteLine(food.Count == 0);
+            
             Console.ReadKey();
         }
     }
-    // interface pour les proies
-    // le nom contient un "I" en majuscule parce que c'est une convention d'interface
-    interface IPrey
-    {
-        void Flee();
-    }
-
-    // interface pour les prédateurs
-    interface IPredator
-    {
-        void Hunt();
-    }
-
-    class Rabit: IPrey
-    {
-        public void Flee()
-        {
-            Console.WriteLine("The rabbit is fleeing");
-        }
-    }
-
-    class Hawk: IPredator
-    {
-        public void Hunt()
-        {
-            Console.WriteLine("The hawk is hunting");
-        }
-    }
-
-    class Fish: IPrey, IPredator
-    {
-        public void Flee()
-        {
-            Console.WriteLine("The fish is fleeing");
-        }
-        public void Hunt()
-        {
-            Console.WriteLine("The fish is hunting");
-        }
-    }
-
 }
 // dotnet new console pour créer un nouveau projet console
 // dotnet run pour exécuter le programme
