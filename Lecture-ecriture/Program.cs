@@ -11,7 +11,12 @@ namespace HelloWorld
             // File.WriteAllText(@"fichier.txt", "Bonjour, je suis un fichier texte") écrit une chaîne de caractères dans un fichier.
             // File.WriteAllLines(@"fichier.txt", lignes) écrit un tableau de chaînes de caractères dans un fichier.
             // File.ReadAllText(@"fichier.txt") lit tout le contenu du fichier et le retourne dans une chaîne de caractères.
-
+            // File.Exists(@"fichier.txt") vérifie si le fichier existe.
+            // File.AppendAllText(@"fichier.txt", "Bonjour, je suis un fichier texte") écrit une chaîne de caractères dans un fichier.
+            // File.CreateText(@"fichier.txt") crée un fichier texte et retourne un StreamWriter.
+            // StreamWriter.WriteLine(@"fichier.txt", "Bonjour, je suis un fichier texte") écrit une chaîne de caractères dans un fichier.
+            // Directory.Exists(@"fichier.txt") vérifie si le répertoire existe.
+            // Directory.CreateDirectory(@"fichier.txt") crée un répertoire.
           String[] lignes = File.ReadAllLines(@"fichier.txt");
           foreach (String ligne in lignes)
           {

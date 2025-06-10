@@ -1,0 +1,3 @@
+[2025-06-10 10:13:25] [INFO] Hello, World!
+[2025-06-10 10:13:25] [WARNING] Warning message
+[2025-06-10 10:13:25] [ERROR] Error message
